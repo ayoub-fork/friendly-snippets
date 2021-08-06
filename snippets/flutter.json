@@ -1,683 +1,1128 @@
 {
-    "Stateless Widget": {
-        "prefix": "statelessW",
-        "body": [
-            "class ${1:name} extends StatelessWidget {",
-            "  const ${1:name}({Key? key}) : super(key: key);\n",
-            "  @override",
-            "  Widget build(BuildContext context) {",
-            "    return Container(",
-            "      child: ${2:null},",
-            "    );",
-            "  }",
-            "}"
-        ],
-        "description": "Create a Stateless widget"
-    },
-    "Stateful Widget": {
-        "prefix": "statefulW",
-        "body": [
-            "class ${1:name} extends StatefulWidget {",
-            "  ${1:name}({Key? key}) : super(key: key);\n",
-            "  @override",
-            "  _${1:WidgetName}State createState() => _${1:WidgetName}State();",
-            "}\n",
-            "class _${1:index}State extends State<${1:index}> {",
-            "  @override",
-            "  Widget build(BuildContext context) {",
-            "    return Container(",
-            "       child: ${2:null},",
-            "    );",
-            "  }",
-            "}"
-        ],
-        "description": "Create a Stateful widget"
-    },
-    "Build Method": {
-        "prefix": "build",
-        "body": [
-            "@override",
-            "Widget build(BuildContext context) {",
-            "  return ${0:};",
-            "}"
-        ],
-        "description": "Describes the part of the user interface represented by this widget."
-    },
-    "Custom Painter ": {
-        "prefix": "customPainter",
-        "body": [
-            "class ${0:name}Painter extends CustomPainter {",
-            "",
-            "  @override",
-            "  void paint(Canvas canvas, Size size) {",
-            "  }",
-            "",
-            "  @override",
-            "  bool shouldRepaint(${0:name}Painter oldDelegate) => false;",
-            "",
-            "  @override",
-            "  bool shouldRebuildSemantics(${0:name}Painter oldDelegate) => false;",
-            "}"
-        ],
-        "description": "Used for creating custom paint"
-    },
-    "Custom Clipper ": {
-        "prefix": "customClipper",
-        "body": [
-            "class ${0:name}Clipper extends CustomClipper<Path> {",
-            "",
-            "  @override",
-            "  Path getClip(Size size) {",
-            "  }",
-            "",
-            "  @override",
-            "  bool shouldReclip(CustomClipper<Path> oldClipper) => false;",
-            "}"
-        ],
-        "description": "Used for creating custom shapes"
-    },
-    "InitState ": {
-        "prefix": "initS",
-        "body": [
-            "@override",
-            "void initState() { ",
-            "  super.initState();",
-            "  ${0:}",
-            "}"
-        ],
-        "description": "Called when this object is inserted into the tree. The framework will call this method exactly once for each State object it creates."
-    },
-    "Dispose": {
-        "prefix": "dis",
-        "body": [
-            "@override",
-            "void dispose() { ",
-            "  ${0:}",
-            "  super.dispose();",
-            "}"
-        ],
-        "description": "Called when this object is removed from the tree permanently. The framework calls this method when this State object will never build again."
-    },
-    "Reassemble": {
-        "prefix": "reassemble",
-        "body": [
-            "@override",
-            "void reassemble(){",
-            "  super.reassemble();",
-            "  ${0:}",
-            "}"
-        ],
-        "description": "Called whenever the application is reassembled during debugging, for example during hot reload."
-    },
-    "didChangeDependencies": {
-        "prefix": "didChangeD",
-        "body": [
-            "@override",
-            "void didChangeDependencies() {",
-            "  super.didChangeDependencies();",
-            "  ${0:}",
-            "}"
-        ],
-        "description": "Called when a dependency of this State object changes"
-    },
-    "didUpdateWidget": {
-        "prefix": "didUpdateW",
-        "body": [
-            "@override",
-            "void didUpdateWidget (${1:Type} ${2:oldWidget}) {",
-            "  super.didUpdateWidget(${2:oldWidget});",
-            "  ${0:}",
-            "}"
-        ],
-        "description": "Called whenever the widget configuration changes."
-    },
-    "ListView.Builder": {
-        "prefix": "listViewB",
-        "body": [
-            "ListView.builder(",
-            "  itemCount: ${1:1},",
-            "  itemBuilder: (BuildContext context, int index) {",
-            "  return ${2:};",
-            " },",
-            "),"
-        ],
-        "description": "Creates a scrollable, linear array of widgets that are created on demand.Providing a non-null `itemCount` improves the ability of the [ListView] to estimate the maximum scroll extent."
-    },
-    "ListView.Separated": {
-        "prefix": "listViewS",
-        "body": [
-            "ListView.separated(",
-            "  itemCount: ${1:1},",
-            "  separatorBuilder: (BuildContext context, int index) {",
-            "  return ${2:};",
-            " },",
-            "  itemBuilder: (BuildContext context, int index) {",
-            "  return ${3:};",
-            " },",
-            "),"
-        ],
-        "description": "Creates a fixed-length scrollable linear array of list 'items' separated by list item 'separators'."
-    },
-    "GridView.Builder": {
-        "prefix": "gridViewB",
-        "body": [
-            "GridView.builder(",
-            "  gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(",
-            "    crossAxisCount: ${1:2},",
-            "  ),",
-            "  itemCount: ${2:2},",
-            "  itemBuilder: (BuildContext context, int index) {",
-            "    return ${3:};",
-            "  },",
-            "),"
-        ],
-        "description": "Creates a scrollable, 2D array of widgets that are created on demand. Providing a non-null `itemCount` improves the ability of the [GridView] to estimate the maximum scroll extent."
-    },
-    "GridView.Count": {
-        "prefix": "gridViewC",
-        "body": [
-            "GridView.count(",
-            "  crossAxisSpacing: ${1:1},",
-            "  mainAxisSpacing: ${2:2},",
-            "  crossAxisCount: ${3:2},",
-            "  children: <Widget> [",
-            "    ${4:}",
-            "  ],",
-            "),"
-        ],
-        "description": "Creates a scrollable, 2D array of widgets with a fixed number of tiles in the cross axis."
-    },
-    "GridView.Extent": {
-        "prefix": "gridViewE",
-        "body": [
-            "GridView.extent(",
-            "  maxCrossAxisExtent:  ${1:2},",
-            "  children: <Widget> [",
-            "    ${2:}",
-            "  ],",
-            "),"
-        ],
-        "description": "Creates a scrollable, 2D array of widgets with tiles that each have a maximum cross-axis extent."
-    },
-    "Custom Scroll View": {
-        "prefix": "customScrollV",
-        "body": [
-            "CustomScrollView(",
-            "  slivers: <Widget>[",
-            "  ${0:}",
-            "  ],",
-            "),"
-        ],
-        "description": "Creates a `ScrollView` that creates custom scroll effects using slivers. If the `primary` argument is true, the `controller` must be null."
-    },
-    "Stream Builder": {
-        "prefix": "streamBldr",
-        "body": [
-            "StreamBuilder(",
-            "  stream: ${1:stream},",
-            "  initialData: ${2:initialData},",
-            "  builder: (BuildContext context, AsyncSnapshot snapshot) {",
-            "    return Container(",
-            "      child: ${3:child},",
-            "    );",
-            "  },",
-            "),"
-        ],
-        "description": "Creates a new `StreamBuilder` that builds itself based on the latest snapshot of interaction with the specified `stream`"
-    },
-    "Animated Builder": {
-        "prefix": "animatedBldr",
-        "body": [
-            "AnimatedBuilder(",
-            "  animation: ${1:animation},",
-            "  child: ${2:child},",
-            "  builder: (BuildContext context, Widget child) {",
-            "    return ${3:};",
-            "  },",
-            "),"
-        ],
-        "description": "Creates an Animated Builder. The widget specified to `child` is passed to the `builder` "
-    },
-    "Stateful Builder": {
-        "prefix": "statefulBldr",
-        "body": [
-            "StatefulBuilder(",
-            "  builder: (BuildContext context, setState) {",
-            "    return ${0:};",
-            "  },",
-            "),"
-        ],
-        "description": "Creates a widget that both has state and delegates its build to a callback. Useful for rebuilding specific sections of the widget tree."
-    },
-    "Orientation Builder": {
-        "prefix": "orientationBldr",
-        "body": [
-            "OrientationBuilder(",
-            "  builder: (BuildContext context, Orientation orientation) {",
-            "    return Container(",
-            "      child: ${3:child},",
-            "    );",
-            "  },",
-            "),"
-        ],
-        "description": "Creates a builder which allows for the orientation of the device to be specified and referenced"
-    },
-    "Layout Builder": {
-        "prefix": "layoutBldr",
-        "body": [
-            "LayoutBuilder(",
-            "  builder: (BuildContext context, BoxConstraints constraints) {",
-            "    return ${0:};",
-            "  },",
-            "),"
-        ],
-        "description": "Similar to the Builder widget except that the framework calls the builder function at layout time and provides the parent widget's constraints."
-    },
-    "Single Child ScrollView": {
-        "prefix": "singleChildSV",
-        "body": [
-            "SingleChildScrollView(",
-            "  controller: ${1:controller,}",
-            "  child: Column(",
-            "    ${0:}",
-            "  ),",
-            "),"
-        ],
-        "description": "Creates a scroll view with a single child"
-    },
-    "Future Builder": {
-        "prefix": "futureBldr",
-        "body": [
-            "FutureBuilder(",
-            "  future: ${1:Future},",
-            "  initialData: ${2:InitialData},",
-            "  builder: (BuildContext context, AsyncSnapshot snapshot) {",
-            "    return ${3:};",
-            "  },",
-            "),"
-        ],
-        "description": "Creates a Future Builder. This builds itself based on the latest snapshot of interaction with a Future."
-    },
-    "No Such Method": {
-        "prefix": "nosm",
-        "body": [
-            "@override",
-            "dynamic noSuchMethod(Invocation invocation) {",
-            "  ${1:}",
-            "}"
-        ],
-        "description": "This method is invoked when a non-existent method or property is accessed."
-    },
-    "Inherited Widget": {
-        "prefix": "inheritedW",
-        "body": [
-            "class ${1:Name} extends InheritedWidget {",
-            "  ${1:Name}({Key? key, required this.child}) : super(key: key, child: child);",
-            "",
-            "  final Widget child;",
-            "",
-            "  static ${1:Name}? of(BuildContext context) {",
-            "    return context.dependOnInheritedWidgetOfExactType<${1:Name}>();",
-            "  }",
-            "",
-            "  @override",
-            "  bool updateShouldNotify(${1:Name} oldWidget) {",
-            "    return ${2:true};",
-            "  }",
-            "}"
-        ],
-        "description": "Class used to propagate information down the widget tree"
-    },
-    "Mounted": {
-        "prefix": "mounted",
-        "body": [
-            "@override",
-            "bool get mounted {",
-            "  ${0:}",
-            "}"
-        ],
-        "description": "Whether this State object is currently in a tree."
-    },
-    "Sink": {
-        "prefix": "snk",
-        "body": [
-            "Sink<${1:type}> get ${2:name} => _${2:name}Controller.sink;",
-            "final _${2:name}Controller = StreamController<${1:type}>();"
-        ],
-        "description": "A Sink is the input of a stream."
-    },
-    "Stream": {
-        "prefix": "strm",
-        "body": [
-            "Stream<${1:type}> get ${2:name} => _${2:name}Controller.stream;",
-            "final _${2:name}Controller = StreamController<${1:type}>();"
-        ],
-        "description": "A source of asynchronous data events. A stream can be of any data type <T>"
-    },
-    "Subject": {
-        "prefix": "subj",
-        "body": [
-            "Stream<${1:type}> get ${2:name} => _${2:name}Subject.stream;",
-            "final _${2:name}Subject = BehaviorSubject<${1:type}>();"
-        ],
-        "description": "A BehaviorSubject is also a broadcast StreamController which returns an Observable rather than a Stream."
-    },
-    "toString": {
-        "prefix": "toStr",
-        "body": [
-            "@override",
-            "String toString() {",
-            "return ${1:toString};",
-            " }"
-        ],
-        "description": "Returns a string representation of this object."
-    },
-    "debugPrint": {
-        "prefix": "debugP",
-        "body": [
-            "debugPrint(${1:statement});"
-        ],
-        "description": "Prints a message to the console, which you can access using the flutter tool's `logs` command (flutter logs)."
-    },
-    "Material Package": {
-        "prefix": "importM",
-        "body": "import 'package:flutter/material.dart';",
-        "description": "Import flutter material package"
-    },
-    "Cupertino Package": {
-        "prefix": "importC",
-        "body": "import 'package:flutter/cupertino.dart';",
-        "description": "Import Flutter Cupertino package"
-    },
-    "flutter_test Package": {
-        "prefix": "importFT",
-        "body": "import 'package:flutter_test/flutter_test.dart';",
-        "description": "Import flutter_test package"
-    },
-    "Material App": {
-        "prefix": "mateapp",
-        "description": "Create a MaterialApp",
-        "body": [
-            "import 'package:flutter/material.dart';",
-            " ",
-            "void main() => runApp(MyApp());",
-            " ",
-            "class MyApp extends StatelessWidget {",
-            "  @override",
-            "  Widget build(BuildContext context) {",
-            "    return MaterialApp(",
-            "      title: 'Material App',",
-            "      home: Scaffold(",
-            "        appBar: AppBar(",
-            "          title: Text('Material App Bar'),",
-            "        ),",
-            "        body: Center(",
-            "          child: Container(",
-            "            child: Text('Hello World'),",
-            "          ),",
-            "        ),",
-            "      ),",
-            "    );",
-            "  }",
-            "}"
-        ]
-    },
-    "Cupertino App": {
-        "prefix": "cupeapp",
-        "description": "Create a CupertinoApp",
-        "body": [
-            "import 'package:flutter/cupertino.dart';",
-            " ",
-            "void main() => runApp(MyApp());",
-            " ",
-            "class MyApp extends StatelessWidget {",
-            "  @override",
-            "  Widget build(BuildContext context) {",
-            "    return CupertinoApp(",
-            "      title: 'Cupertino App',",
-            "      home: CupertinoPageScaffold(",
-            "        navigationBar: CupertinoNavigationBar(",
-            "          middle: Text('Cupertino App Bar'),",
-            "        ),",
-            "        child: Center(",
-            "          child: Container(",
-            "            child: Text('Hello World'),",
-            "          ),",
-            "        ),",
-            "      ),",
-            "    );",
-            "  }",
-            "}"
-        ]
-    },
-    "Tween Animation Builder": {
-        "prefix": "tweenAnimationBuilder",
-        "body": [
-            "TweenAnimationBuilder(",
-            "    duration: ${1:const Duration(),}",
-            "    tween: ${2:Tween(),}",
-            "    builder: (BuildContext context, ${3:dynamic} value, Widget? child) {",
-            "       return ${4:Container();}",
-            "     },",
-            " ),  "
-        ],
-        "description": "Widget builder that animates a property of a Widget to a target value whenever the target value changes."
-    },
-    "Value Listenable Builder": {
-        "prefix": "valueListenableBuilder",
-        "body": [
-            "ValueListenableBuilder(",
-            "    valueListenable: ${1: null},",
-            "    builder: (BuildContext context, ${2:dynamic} value, Widget? child) {",
-            "       return ${3: Container();}",
-            "    },",
-            " ),"
-        ],
-        "description": "Given a ValueListenable<T> and a builder which builds widgets from concrete values of T, this class will automatically register itself as a listener of the ValueListenable and call the builder with updated values when the value changes."
-    },
-    "Test": {
-        "prefix": "f-test",
-        "body": [
-            "test(",
-            "   \"${1:test description}\",",
-            "   () {},",
-            ");"
-        ],
-        "description": "Create a test function"
-    },
-    "Test Widgets": {
-        "prefix": "widgetTest",
-        "body": [
-            "testWidgets(",
-            "   \"${1:test description}\",",
-            "   (WidgetTester tester) async {},",
-            ");"
-        ],
-        "description": "Create a testWidgets function"
-    },
-    "Dart main method": {
-      "prefix": ["main"],
-      "body": [
-        "void main() {",
-        "  $0",
-        "}"
-      ],
-      "description": "Dart main method"
-    },
-    "Anonymous identity method": {
-      "prefix": ["ident"],
-      "body": [
-        "(${1:_}) => $1"
-      ],
-      "description": "Anonymous identity method"
-    },
-    "Class outline": {
-      "prefix": ["class"],
-      "body": [
-        "class $1 {",
-        "  $0",
-        "}"
-      ],
-      "description": "Class outline"
-    },
-    "Dart import": {
-      "prefix": ["di"],
-      "body": [
-        "import 'dart:${1:async}';"
-      ],
-      "description": "Dart import"
-    },
-    "Import": {
-      "prefix": ["im"],
-      "body": [
-        "import 'package:$1/${2:$1}.dart';"
-      ],
-      "description": "Import"
-    },
-    "For-in loop": {
-      "prefix": ["for"],
-      "body": [
-        "for(var $1 in ${2:$1s}) {",
-        "  $0",
-        "}"
-      ],
-      "description": "For-in loop"
-    },
-    "indexed for loop": {
-      "prefix": ["fori"],
-      "body": [
-        "for(int i = 0, ${3:l} = $2.length; i<$3; i++) {",
-        "  var $1 = ${2:$1s}[i];",
-        "  $0",
-        "}"
-      ],
-      "description": "indexed for loop"
-    },
-    "Try/catch block": {
-      "prefix": ["try"],
-      "body": [
-        "try {",
-        "  ${1:${VISUAL}}",
-        "} catch(${2:e}${3:, st}) {",
-        "  $4",
-        "}"
-      ],
-      "description": "Try/catch block"
-    },
-    "If block": {
-      "prefix": ["if"],
-      "body": [
-        "if ($1) {",
-        "  ${2:${VISUAL}}",
-        "}"
-      ],
-      "description": "If block"
-    },
-    "Field setter": {
-      "prefix": ["set"],
-      "body": [
-        "set $1($2 $1) {",
-        "  ${3:_$1 = $1;}",
-        "}"
-      ],
-      "description": "Field setter"
-    },
-    "Simple field getter": {
-      "prefix": ["get"],
-      "body": [
-        "$1 get $2 => ${3:_$2};"
-      ],
-      "description": "Simple field getter"
-    },
-    "Field getter with more logic": {
-      "prefix": ["gett"],
-      "body": [
-        "$1 get $2 {",
-        "  $3",
-        "}"
-      ],
-      "description": "Field getter with more logic"
-    },
-    "Async field getter": {
-      "prefix": ["aget"],
-      "body": [
-        "Future<$1> get $2 async => ${3:_$2};"
-      ],
-      "description": "Async field getter"
-    },
-    "Async field getter with more logic": {
-      "prefix": ["agett"],
-      "body": [
-        "Future<$1> get $2 async {",
-        "  $3",
-        "}"
-      ],
-      "description": "Async field getter with more logic"
-    },
-    "Stream field with a controller": {
-      "prefix": ["gets"],
-      "body": [
-        "Stream<${2:void}> get ${1} => ${3:$4.stream;",
-        "final ${4:_$1} = StreamController<$2>();}"
-      ],
-      "description": "Stream field with a controller"
-    },
-    "Anonymous method": {
-      "prefix": ["m"],
-      "body": [
-        "($1) {",
-        "  $0",
-        "}"
-      ],
-      "description": "Anonymous method"
-    },
-    "Anonymous single statement return": {
-      "prefix": ["r"],
-      "body": [
-        "($1) => $0"
-      ],
-      "description": "Anonymous single statement return"
-    },
-    "Async anonymous method": {
-      "prefix": ["am"],
-      "body": [
-        "($1) async {",
-        "  $0",
-        "}"
-      ],
-      "description": "Async anonymous method"
-    },
-    "Async anonymous single statement method": {
-      "prefix": ["ar"],
-      "body": [
-        "($1) async => $0"
-      ],
-      "description": "Async anonymous single statement method"
-    },
-    "Instance or top level method": {
-      "prefix": ["m"],
-      "body": [
-        "${1:void} $2($3) {",
-        "  $0",
-        "}"
-      ],
-      "description": "Instance or top level method"
-    },
-    "Single statement return": {
-      "prefix": ["r"],
-      "body": [
-        "$1 $2($3) => $0;"
-      ],
-      "description": "Single statement return"
-    },
-    "Async instance or top level method": {
-      "prefix": ["am"],
-      "body": [
-        "Future<${1:void}> $2($3) async {",
-        "  $0",
-        "}"
-      ],
-      "description": "Async instance or top level method"
-    }
-
+  "Stateless Widget": {
+    "prefix": "statelessW",
+    "body": [
+      "class ${1:name} extends StatelessWidget {",
+      "  const $1({Key? key}) : super(key: key);\n",
+      "  @override",
+      "  Widget build(BuildContext context) {",
+      "    return Container(",
+      "      child: ${2:null},",
+      "    );",
+      "  }",
+      "}"
+    ],
+    "description": "Create a Stateless widget"
+  },
+  "Stateful Widget": {
+    "prefix": "statefulW",
+    "body": [
+      "class ${1:name} extends StatefulWidget {",
+      "  $1({Key? key}) : super(key: key);\n",
+      "  @override",
+      "  _${1:WidgetName}State createState() => _${1:WidgetName}State();",
+      "}\n",
+      "class _$1State extends State<${1:index}> {",
+      "  @override",
+      "  Widget build(BuildContext context) {",
+      "    return Container(",
+      "       child: ${2:null},",
+      "    );",
+      "  }",
+      "}"
+    ],
+    "description": "Create a Stateful widget"
+  },
+  "Build Method": {
+    "prefix": "build",
+    "body": [
+      "@override",
+      "Widget build(BuildContext context) {",
+      "  return ${0:};",
+      "}"
+    ],
+    "description": "Describes the part of the user interface represented by this widget."
+  },
+  "Custom Painter ": {
+    "prefix": "customPainter",
+    "body": [
+      "class ${0:name}Painter extends CustomPainter {",
+      "",
+      "  @override",
+      "  void paint(Canvas canvas, Size size) {",
+      "  }",
+      "",
+      "  @override",
+      "  bool shouldRepaint(${0:name}Painter oldDelegate) => false;",
+      "",
+      "  @override",
+      "  bool shouldRebuildSemantics(${0:name}Painter oldDelegate) => false;",
+      "}"
+    ],
+    "description": "Used for creating custom paint"
+  },
+  "Custom Clipper ": {
+    "prefix": "customClipper",
+    "body": [
+      "class ${0:name}Clipper extends CustomClipper<Path> {",
+      "",
+      "  @override",
+      "  Path getClip(Size size) {",
+      "  }",
+      "",
+      "  @override",
+      "  bool shouldReclip(CustomClipper<Path> oldClipper) => false;",
+      "}"
+    ],
+    "description": "Used for creating custom shapes"
+  },
+  "InitState ": {
+    "prefix": "initS",
+    "body": [
+      "@override",
+      "void initState() { ",
+      "  super.initState();",
+      "  ${0:}",
+      "}"
+    ],
+    "description": "Called when this object is inserted into the tree. The framework will call this method exactly once for each State object it creates."
+  },
+  "Dispose": {
+    "prefix": "dis",
+    "body": [
+      "@override",
+      "void dispose() { ",
+      "  ${0:}",
+      "  super.dispose();",
+      "}"
+    ],
+    "description": "Called when this object is removed from the tree permanently. The framework calls this method when this State object will never build again."
+  },
+  "Reassemble": {
+    "prefix": "reassemble",
+    "body": [
+      "@override",
+      "void reassemble(){",
+      "  super.reassemble();",
+      "  ${0:}",
+      "}"
+    ],
+    "description": "Called whenever the application is reassembled during debugging, for example during hot reload."
+  },
+  "didChangeDependencies": {
+    "prefix": "didChangeD",
+    "body": [
+      "@override",
+      "void didChangeDependencies() {",
+      "  super.didChangeDependencies();",
+      "  ${0:}",
+      "}"
+    ],
+    "description": "Called when a dependency of this State object changes"
+  },
+  "didUpdateWidget": {
+    "prefix": "didUpdateW",
+    "body": [
+      "@override",
+      "void didUpdateWidget (${1:Type} ${2:oldWidget}) {",
+      "  super.didUpdateWidget(${2:oldWidget});",
+      "  ${0:}",
+      "}"
+    ],
+    "description": "Called whenever the widget configuration changes."
+  },
+  "ListView.Builder": {
+    "prefix": "listViewB",
+    "body": [
+      "ListView.builder(",
+      "  itemCount: ${1:1},",
+      "  itemBuilder: (BuildContext context, int index) {",
+      "  return ${2:};",
+      " },",
+      "),"
+    ],
+    "description": "Creates a scrollable, linear array of widgets that are created on demand.Providing a non-null `itemCount` improves the ability of the [ListView] to estimate the maximum scroll extent."
+  },
+  "ListView.Separated": {
+    "prefix": "listViewS",
+    "body": [
+      "ListView.separated(",
+      "  itemCount: ${1:1},",
+      "  separatorBuilder: (BuildContext context, int index) {",
+      "  return ${2:};",
+      " },",
+      "  itemBuilder: (BuildContext context, int index) {",
+      "  return ${3:};",
+      " },",
+      "),"
+    ],
+    "description": "Creates a fixed-length scrollable linear array of list 'items' separated by list item 'separators'."
+  },
+  "GridView.Builder": {
+    "prefix": "gridViewB",
+    "body": [
+      "GridView.builder(",
+      "  gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(",
+      "    crossAxisCount: ${1:2},",
+      "  ),",
+      "  itemCount: ${2:2},",
+      "  itemBuilder: (BuildContext context, int index) {",
+      "    return ${3:};",
+      "  },",
+      "),"
+    ],
+    "description": "Creates a scrollable, 2D array of widgets that are created on demand. Providing a non-null `itemCount` improves the ability of the [GridView] to estimate the maximum scroll extent."
+  },
+  "GridView.Count": {
+    "prefix": "gridViewC",
+    "body": [
+      "GridView.count(",
+      "  crossAxisSpacing: ${1:1},",
+      "  mainAxisSpacing: ${2:2},",
+      "  crossAxisCount: ${3:2},",
+      "  children: <Widget> [",
+      "    ${4:}",
+      "  ],",
+      "),"
+    ],
+    "description": "Creates a scrollable, 2D array of widgets with a fixed number of tiles in the cross axis."
+  },
+  "GridView.Extent": {
+    "prefix": "gridViewE",
+    "body": [
+      "GridView.extent(",
+      "  maxCrossAxisExtent:  ${1:2},",
+      "  children: <Widget> [",
+      "    ${2:}",
+      "  ],",
+      "),"
+    ],
+    "description": "Creates a scrollable, 2D array of widgets with tiles that each have a maximum cross-axis extent."
+  },
+  "Custom Scroll View": {
+    "prefix": "customScrollV",
+    "body": [
+      "CustomScrollView(",
+      "  slivers: <Widget>[",
+      "  ${0:}",
+      "  ],",
+      "),"
+    ],
+    "description": "Creates a `ScrollView` that creates custom scroll effects using slivers. If the `primary` argument is true, the `controller` must be null."
+  },
+  "Stream Builder": {
+    "prefix": "streamBldr",
+    "body": [
+      "StreamBuilder(",
+      "  stream: ${1:stream},",
+      "  initialData: ${2:initialData},",
+      "  builder: (BuildContext context, AsyncSnapshot snapshot) {",
+      "    return Container(",
+      "      child: ${3:child},",
+      "    );",
+      "  },",
+      "),"
+    ],
+    "description": "Creates a new `StreamBuilder` that builds itself based on the latest snapshot of interaction with the specified `stream`"
+  },
+  "Animated Builder": {
+    "prefix": "animatedBldr",
+    "body": [
+      "AnimatedBuilder(",
+      "  animation: ${1:animation},",
+      "  child: ${2:child},",
+      "  builder: (BuildContext context, Widget child) {",
+      "    return ${3:};",
+      "  },",
+      "),"
+    ],
+    "description": "Creates an Animated Builder. The widget specified to `child` is passed to the `builder` "
+  },
+  "Stateful Builder": {
+    "prefix": "statefulBldr",
+    "body": [
+      "StatefulBuilder(",
+      "  builder: (BuildContext context, setState) {",
+      "    return ${0:};",
+      "  },",
+      "),"
+    ],
+    "description": "Creates a widget that both has state and delegates its build to a callback. Useful for rebuilding specific sections of the widget tree."
+  },
+  "Orientation Builder": {
+    "prefix": "orientationBldr",
+    "body": [
+      "OrientationBuilder(",
+      "  builder: (BuildContext context, Orientation orientation) {",
+      "    return Container(",
+      "      child: ${3:child},",
+      "    );",
+      "  },",
+      "),"
+    ],
+    "description": "Creates a builder which allows for the orientation of the device to be specified and referenced"
+  },
+  "Layout Builder": {
+    "prefix": "layoutBldr",
+    "body": [
+      "LayoutBuilder(",
+      "  builder: (BuildContext context, BoxConstraints constraints) {",
+      "    return ${0:};",
+      "  },",
+      "),"
+    ],
+    "description": "Similar to the Builder widget except that the framework calls the builder function at layout time and provides the parent widget's constraints."
+  },
+  "Single Child ScrollView": {
+    "prefix": "singleChildSV",
+    "body": [
+      "SingleChildScrollView(",
+      "  controller: ${1:controller,}",
+      "  child: Column(",
+      "    ${0:}",
+      "  ),",
+      "),"
+    ],
+    "description": "Creates a scroll view with a single child"
+  },
+  "Future Builder": {
+    "prefix": "futureBldr",
+    "body": [
+      "FutureBuilder(",
+      "  future: ${1:Future},",
+      "  initialData: ${2:InitialData},",
+      "  builder: (BuildContext context, AsyncSnapshot snapshot) {",
+      "    return ${3:};",
+      "  },",
+      "),"
+    ],
+    "description": "Creates a Future Builder. This builds itself based on the latest snapshot of interaction with a Future."
+  },
+  "No Such Method": {
+    "prefix": "nosm",
+    "body": [
+      "@override",
+      "dynamic noSuchMethod(Invocation invocation) {",
+      "  ${1:}",
+      "}"
+    ],
+    "description": "This method is invoked when a non-existent method or property is accessed."
+  },
+  "Inherited Widget": {
+    "prefix": "inheritedW",
+    "body": [
+      "class ${1:Name} extends InheritedWidget {",
+      "  ${1:Name}({Key? key, required this.child}) : super(key: key, child: child);",
+      "",
+      "  final Widget child;",
+      "",
+      "  static ${1:Name}? of(BuildContext context) {",
+      "    return context.dependOnInheritedWidgetOfExactType<${1:Name}>();",
+      "  }",
+      "",
+      "  @override",
+      "  bool updateShouldNotify(${1:Name} oldWidget) {",
+      "    return ${2:true};",
+      "  }",
+      "}"
+    ],
+    "description": "Class used to propagate information down the widget tree"
+  },
+  "Mounted": {
+    "prefix": "mounted",
+    "body": [
+      "@override",
+      "bool get mounted {",
+      "  ${0:}",
+      "}"
+    ],
+    "description": "Whether this State object is currently in a tree."
+  },
+  "Sink": {
+    "prefix": "snk",
+    "body": [
+      "Sink<${1:type}> get ${2:name} => _${2:name}Controller.sink;",
+      "final _${2:name}Controller = StreamController<${1:type}>();"
+    ],
+    "description": "A Sink is the input of a stream."
+  },
+  "Stream": {
+    "prefix": "strm",
+    "body": [
+      "Stream<${1:type}> get ${2:name} => _${2:name}Controller.stream;",
+      "final _${2:name}Controller = StreamController<${1:type}>();"
+    ],
+    "description": "A source of asynchronous data events. A stream can be of any data type <T>"
+  },
+  "Subject": {
+    "prefix": "subj",
+    "body": [
+      "Stream<${1:type}> get ${2:name} => _${2:name}Subject.stream;",
+      "final _${2:name}Subject = BehaviorSubject<${1:type}>();"
+    ],
+    "description": "A BehaviorSubject is also a broadcast StreamController which returns an Observable rather than a Stream."
+  },
+  "toString": {
+    "prefix": "toStr",
+    "body": [
+      "@override",
+      "String toString() {",
+      "return ${1:toString};",
+      " }"
+    ],
+    "description": "Returns a string representation of this object."
+  },
+  "debugPrint": {
+    "prefix": "debugP",
+    "body": [
+      "debugPrint(${1:statement});"
+    ],
+    "description": "Prints a message to the console, which you can access using the flutter tool's `logs` command (flutter logs)."
+  },
+  "Material Package": {
+    "prefix": "impM",
+    "body": "import 'package:flutter/material.dart';",
+    "description": "Import flutter material package"
+  },
+  "Cupertino Package": {
+    "prefix": "impC",
+    "body": "import 'package:flutter/cupertino.dart';",
+    "description": "Import Flutter Cupertino package"
+  },
+  "flutter_test Package": {
+    "prefix": "importFT",
+    "body": "import 'package:flutter_test/flutter_test.dart';",
+    "description": "Import flutter_test package"
+  },
+  "Material App": {
+    "prefix": "mateapp",
+    "body": [
+      "import 'package:flutter/material.dart';",
+      " ",
+      "void main() => runApp(MyApp());",
+      " ",
+      "class MyApp extends StatelessWidget {",
+      "  @override",
+      "  Widget build(BuildContext context) {",
+      "    return MaterialApp(",
+      "      title: 'Material App',",
+      "      home: Scaffold(",
+      "        appBar: AppBar(",
+      "          title: Text('Material App Bar'),",
+      "        ),",
+      "        body: Center(",
+      "          child: Container(",
+      "            child: Text('Hello World'),",
+      "          ),",
+      "        ),",
+      "      ),",
+      "    );",
+      "  }",
+      "}"
+    ],
+    "description": "Create a MaterialApp"
+  },
+  "Cupertino App": {
+    "prefix": "cupeapp",
+    "body": [
+      "import 'package:flutter/cupertino.dart';",
+      " ",
+      "void main() => runApp(MyApp());",
+      " ",
+      "class MyApp extends StatelessWidget {",
+      "  @override",
+      "  Widget build(BuildContext context) {",
+      "    return CupertinoApp(",
+      "      title: 'Cupertino App',",
+      "      home: CupertinoPageScaffold(",
+      "        navigationBar: CupertinoNavigationBar(",
+      "          middle: Text('Cupertino App Bar'),",
+      "        ),",
+      "        child: Center(",
+      "          child: Container(",
+      "            child: Text('Hello World'),",
+      "          ),",
+      "        ),",
+      "      ),",
+      "    );",
+      "  }",
+      "}"
+    ],
+    "description": "Create a CupertinoApp"
+  },
+  "Tween Animation Builder": {
+    "prefix": "tweenAnimationBuilder",
+    "body": [
+      "TweenAnimationBuilder(",
+      "    duration: ${1:const Duration(),}",
+      "    tween: ${2:Tween(),}",
+      "    builder: (BuildContext context, ${3:dynamic} value, Widget? child) {",
+      "       return ${4:Container();}",
+      "     },",
+      " ),  "
+    ],
+    "description": "Widget builder that animates a property of a Widget to a target value whenever the target value changes."
+  },
+  "Value Listenable Builder": {
+    "prefix": "valueListenableBuilder",
+    "body": [
+      "ValueListenableBuilder(",
+      "    valueListenable: ${1: null},",
+      "    builder: (BuildContext context, ${2:dynamic} value, Widget? child) {",
+      "       return ${3: Container();}",
+      "    },",
+      " ),"
+    ],
+    "description": "Given a ValueListenable<T> and a builder which builds widgets from concrete values of T, this class will automatically register itself as a listener of the ValueListenable and call the builder with updated values when the value changes."
+  },
+  "Test": {
+    "prefix": "f-test",
+    "body": [
+      "test(",
+      "   \"${1:test description}\",",
+      "   () {},",
+      ");"
+    ],
+    "description": "Create a test function"
+  },
+  "Test Widgets": {
+    "prefix": "widgetTest",
+    "body": [
+      "testWidgets(",
+      "   \"${1:test description}\",",
+      "   (WidgetTester tester) async {},",
+      ");"
+    ],
+    "description": "Create a testWidgets function"
+  },
+  "Scaffold widget snippet": {
+    "prefix": "fscaf",
+    "body": [
+      "Scaffold(",
+      "  appBar: AppBar(",
+      "    title: Text('${1:Title}'),",
+      "  ),",
+      "  body: ${2:Container()}${0},",
+      ");"
+    ],
+    "description": "Scaffold widget snippet"
+  },
+  "Expand widget snippet": {
+    "prefix": "fex",
+    "body": [
+      "Expanded(",
+      "  child: ${1:Widget},${0}",
+      ")"
+    ],
+    "description": "Expand widget snippet"
+  },
+  "Text widget snippet": {
+    "prefix": "ftxt",
+    "body": [
+      "Text('${1:text}'),${0}"
+    ],
+    "description": "Text widget snippet"
+  },
+  "Flutter Icon widget snippet": {
+    "prefix": "fic",
+    "body": [
+      "Icon(Icons.${1:clear})${0}"
+    ],
+    "description": "Flutter Icon widget snippet"
+  },
+  "Flutter Container widget snippet": {
+    "prefix": "fcont",
+    "body": [
+      "Container(",
+      "  child: ${1}",
+      ")"
+    ],
+    "description": "Flutter Container widget snippet"
+  },
+  "Flutter Center widget snippet": {
+    "prefix": "fcent",
+    "body": [
+      "Center(",
+      "  child: ${1:Widget}(${0}),",
+      ")"
+    ],
+    "description": "Flutter Center widget snippet"
+  },
+  "Flutter Row widget snippet": {
+    "prefix": "frow",
+    "body": [
+      "Row(",
+      "  children: <Widget>[${0}],",
+      ")"
+    ],
+    "description": "Flutter Row widget snippet"
+  },
+  "Flutter Column widget snippet": {
+    "prefix": "fcol",
+    "body": [
+      "Column(",
+      "  children: <Widget>[${0}],",
+      ")"
+    ],
+    "description": "Flutter Column widget snippet"
+  },
+  "Flutter Stack widget snippet": {
+    "prefix": "fstk",
+    "body": [
+      "Stack(",
+      "  children: <Widget>[${0}],",
+      ")"
+    ],
+    "description": "Flutter Stack widget snippet"
+  },
+  "Align widget": {
+    "prefix": "falign",
+    "body": [
+      "Align(",
+      "  alignment: Alignment${1},",
+      "  child:${2:Widget}",
+      "  ),"
+    ],
+    "description": "Align widget"
+  },
+  "Textbutton widget": {
+    "prefix": "ftextbtn",
+    "body": [
+      "TextButton(",
+      "  onPressed: () {${1}},",
+      "  child: Text(",
+      "    \"${2:Text Button}\",",
+      "  ),",
+      "),"
+    ],
+    "description": "Textbutton widget"
+  },
+  "FloatingActionButton widget": {
+    "prefix": "fab",
+    "body": [
+      "FloatingActionButton(",
+      "  onPressed: () {${1}},",
+      "  child: Icon(Icons.${2:add}),",
+      "),"
+    ],
+    "description": "FloatingActionButton widget"
+  },
+  "IconButton widget": {
+    "prefix": "ficbtn",
+    "body": [
+      "IconButton(",
+      "  onPressed: () {${1}},",
+      "  icon: Icon(Icons.${2:add}),",
+      "),"
+    ],
+    "description": "IconButton widget"
+  },
+  "ElevatedButton widget": {
+    "prefix": "felevbtn",
+    "body": [
+      "ElevatedButton(",
+      "  onPressed: () {${1}},",
+      "  child: Text(",
+      "    \"${2:Elevated Button}\",",
+      "  ),",
+      ")"
+    ],
+    "description": "ElevatedButton widget"
+  },
+  "GestureDetector widget": {
+    "prefix": "fgesdet",
+    "body": [
+      "GestureDetector(",
+      "  onTap: () {${1}},",
+      "  child: ${2:Widget},",
+      "),"
+    ],
+    "description": "GestureDetector widget"
+  },
+  "InkWell widget": {
+    "prefix": "fink",
+    "body": [
+      "InkWell(",
+      "  onTap: () {${1}},",
+      "  child:${2:Widget}",
+      "),"
+    ],
+    "description": "RaisedButton widget"
+  },
+  "Drawer widget": {
+    "prefix": "fdrawer",
+    "body": [
+      "Drawer(",
+      "  child: ListView(",
+      "    children: const <Widget>[${0}],",
+      "),  "
+    ],
+    "description": "Drawer widget"
+  },
+  "MediaQuery widget": {
+    "prefix": "fmeque",
+    "body": [
+      "MediaQuery.of(context).${0};"
+    ],
+    "description": "MediaQuery widget"
+  },
+  "Services Package": {
+    "prefix": "impS",
+    "body": "import 'package:flutter/services.dart';",
+    "description": "Import Flutter Cupertino package"
+  },
+  "Foundation Package": {
+    "prefix": "impF",
+    "body": "import 'package:flutter/foundation.dart';",
+    "description": "Import Flutter Cupertino package"
+  },
+  "HTTP Package": {
+    "prefix": "impH",
+    "body": "import 'package:http/http.dart'as http;",
+    "description": "Import Flutter HTTP package"
+  },
+  "Creates a screen with text in center": {
+    "prefix": "screen",
+    "body": [
+      "import 'package:flutter/material.dart';",
+      "",
+      "class ${1:Screen} extends StatelessWidget {",
+      "  @override",
+      "  Widget build(BuildContext context) {",
+      "    return Scaffold(",
+      "      appBar: AppBar(",
+      "        title: Text('${1:App Bar}'),",
+      "      ),",
+      "      body: Center(",
+      "        child: Container(",
+      "          child: Text('${1:Hello World}'),",
+      "        ),",
+      "      ),",
+      "    );",
+      "  }",
+      "}",
+      ""
+    ],
+    "description": "Creates a screen with text in center"
+  },
+  "Device Preview": {
+    "prefix": "devprev",
+    "body": [
+      "import 'package:device_preview/device_preview.dart';",
+      "import 'package:flutter/foundation.dart';",
+      "import 'package:flutter/material.dart';",
+      "",
+      "void main() => runApp(",
+      "      DevicePreview(",
+      "        enabled: !kReleaseMode,",
+      "        builder: (context) => MyApp(), // Wrap your app",
+      "      ),",
+      "    );",
+      "",
+      "class MyApp extends StatelessWidget {",
+      "  @override",
+      "  Widget build(BuildContext context) {",
+      "    return MaterialApp(",
+      "        debugShowCheckedModeBanner: false,",
+      "        builder: DevicePreview.appBuilder,",
+      "        title: 'Flutter Demo',",
+      "        theme: ThemeData(",
+      "          primarySwatch: Colors.blue,",
+      "        ),",
+      "        home: ${1:HomePage()},",
+      "    );",
+      "  }",
+      "}"
+    ],
+    "description": "Device Preview"
+  },
+  "Theme of context": {
+    "prefix": "ftheme",
+    "body": [
+      "Theme.of(context).${0}"
+    ],
+    "description": "Theme of context"
+  },
+  "CrossAxisAlignment": {
+    "prefix": "caa",
+    "body": [
+      "crossAxisAlignment : CrossAxisAlignment.${0},"
+    ],
+    "description": "CrossAxisAlignment"
+  },
+  "MainAxisAlignment": {
+    "prefix": "maa",
+    "body": [
+      "mainAxisAlignment : MainAxisAlignment.${1},"
+    ],
+    "description": "MainAxisAlignment"
+  },
+  "Flutter Logo": {
+    "prefix": "flogo",
+    "body": [
+      "FlutterLogo(),"
+    ],
+    "description": "Flutter Logo"
+  },
+  "SizedBox Widget": {
+    "prefix": "fszb",
+    "body": [
+      "SizedBox(),"
+    ],
+    "description": "Sized Box Widget"
+  },
+  "SizedBox Widget with width": {
+    "prefix": "fszbw",
+    "body": [
+      "SizedBox(width:${0}),"
+    ],
+    "description": "SizedBox Widget with width"
+  },
+  "SizedBox Widget with height": {
+    "prefix": "fszbh",
+    "body": [
+      "SizedBox(height:${0}),"
+    ],
+    "description": "SizedBox Widget with height"
+  },
+  "ListView Widget": {
+    "prefix": "flistv",
+    "body": [
+      "ListView(",
+      "children: <Widget>[${0}],",
+      ")"
+    ],
+    "description": "ListView Widget"
+  },
+  "Navigation widget": {
+    "prefix": "fnav",
+    "body": [
+      "Navigator.push(",
+      " context,",
+      " MaterialPageRoute(builder: (context) => ${1}),",
+      " );"
+    ],
+    "description": "Flutter Navigation widget"
+  },
+  "Custom AppBar widget": {
+    "prefix": "appbar",
+    "body": [
+      "import 'package:flutter/material.dart';",
+      "",
+      "class ${1:AppBarScreen} extends StatelessWidget with PreferredSizeWidget {",
+      "  final Size preferredSize;",
+      "",
+      "  ${1:AppBarScreen}() : preferredSize = Size.fromHeight(56.0);",
+      "",
+      "  @override",
+      "  Widget build(BuildContext context) {",
+      "    return AppBar(",
+      "      title: Text(",
+      "        '${2:AppBarScreen}',",
+      "      ),",
+      "      leading: IconButton(",
+      "        icon: Icon(Icons.arrow_back_ios),",
+      "        onPressed: () => Navigator.of(context).pop(),",
+      "      ),",
+      "      automaticallyImplyLeading: true,",
+      "    );",
+      "  }",
+      "}"
+    ],
+    "description": "Custom AppBar widget"
+  },
+  "Default Counter App ": {
+    "prefix": "defaultApp",
+    "body": [
+      "import 'package:flutter/material.dart';",
+      "",
+      "void main() {",
+      "  runApp(MyApp());",
+      "}",
+      "",
+      "class MyApp extends StatelessWidget {",
+      "  // This widget is the root of your application.",
+      "  @override",
+      "  Widget build(BuildContext context) {",
+      "    return MaterialApp(",
+      "      title: 'Flutter Demo',",
+      "      theme: ThemeData(",
+      "        // This is the theme of your application.",
+      "        //",
+      "        // Try running your application with \"flutter run\". You'll see the",
+      "        // application has a blue toolbar. Then, without quitting the app, try",
+      "        // changing the primarySwatch below to Colors.green and then invoke",
+      "        // \"hot reload\" (press \"r\" in the console where you ran \"flutter run\",",
+      "        // or simply save your changes to \"hot reload\" in a Flutter IDE).",
+      "        // Notice that the counter didn't reset back to zero; the application",
+      "        // is not restarted.",
+      "        primarySwatch: Colors.blue,",
+      "      ),",
+      "      home: MyHomePage(title: 'Flutter Demo Home Page'),",
+      "    );",
+      "  }",
+      "}",
+      "",
+      "class MyHomePage extends StatefulWidget {",
+      "  MyHomePage({Key? key, required this.title}) : super(key: key);",
+      "",
+      "  // This widget is the home page of your application. It is stateful, meaning",
+      "  // that it has a State object (defined below) that contains fields that affect",
+      "  // how it looks.",
+      "",
+      "  // This class is the configuration for the state. It holds the values (in this",
+      "  // case the title) provided by the parent (in this case the App widget) and",
+      "  // used by the build method of the State. Fields in a Widget subclass are",
+      "  // always marked \"final\".",
+      "",
+      "  final String title;",
+      "",
+      "  @override",
+      "  _MyHomePageState createState() => _MyHomePageState();",
+      "}",
+      "",
+      "class _MyHomePageState extends State<MyHomePage> {",
+      "  int _counter = 0;",
+      "",
+      "  void _incrementCounter() {",
+      "    setState(() {",
+      "      // This call to setState tells the Flutter framework that something has",
+      "      // changed in this State, which causes it to rerun the build method below",
+      "      // so that the display can reflect the updated values. If we changed",
+      "      // _counter without calling setState(), then the build method would not be",
+      "      // called again, and so nothing would appear to happen.",
+      "      _counter++;",
+      "    });",
+      "  }",
+      "",
+      "  @override",
+      "  Widget build(BuildContext context) {",
+      "    // This method is rerun every time setState is called, for instance as done",
+      "    // by the _incrementCounter method above.",
+      "    //",
+      "    // The Flutter framework has been optimized to make rerunning build methods",
+      "    // fast, so that you can just rebuild anything that needs updating rather",
+      "    // than having to individually change instances of widgets.",
+      "    return Scaffold(",
+      "      appBar: AppBar(",
+      "        // Here we take the value from the MyHomePage object that was created by",
+      "        // the App.build method, and use it to set our appbar title.",
+      "        title: Text(widget.title),",
+      "      ),",
+      "      body: Center(",
+      "        // Center is a layout widget. It takes a single child and positions it",
+      "        // in the middle of the parent.",
+      "        child: Column(",
+      "          // Column is also a layout widget. It takes a list of children and",
+      "          // arranges them vertically. By default, it sizes itself to fit its",
+      "          // children horizontally, and tries to be as tall as its parent.",
+      "          //",
+      "          // Invoke \"debug painting\" (press \"p\" in the console, choose the",
+      "          // \"Toggle Debug Paint\" action from the Flutter Inspector in Android",
+      "          // Studio, or the \"Toggle Debug Paint\" command in Visual Studio Code)",
+      "          // to see the wireframe for each widget.",
+      "          //",
+      "          // Column has various properties to control how it sizes itself and",
+      "          // how it positions its children. Here we use mainAxisAlignment to",
+      "          // center the children vertically; the main axis here is the vertical",
+      "          // axis because Columns are vertical (the cross axis would be",
+      "          // horizontal).",
+      "          mainAxisAlignment: MainAxisAlignment.center,",
+      "          children: <Widget>[",
+      "            Text(",
+      "              'You have pushed the button this many times:',",
+      "            ),",
+      "            Text(",
+      "              '$_counter',",
+      "              style: Theme.of(context).textTheme.headline4,",
+      "            ),",
+      "          ],",
+      "        ),",
+      "      ),",
+      "      floatingActionButton: FloatingActionButton(",
+      "        onPressed: _incrementCounter,",
+      "        tooltip: 'Increment',",
+      "        child: Icon(Icons.add),",
+      "      ), // This trailing comma makes auto-formatting nicer for build methods.",
+      "    );",
+      "  }",
+      "}"
+    ],
+    "description": "Default Counter App "
+  },
+  "Flutter TextStyle property": {
+    "prefix": "fstyle",
+    "body": [
+      "style: TextStyle($0),"
+    ],
+    "description": "Flutter TextStyle property"
+  },
+  "Dart main method": {
+    "prefix": "main",
+    "body": [
+      "void main() {",
+      "  $0",
+      "}"
+    ],
+    "description": "Dart main method"
+  },
+  "Anonymous identity method": {
+    "prefix": "ident",
+    "body": [
+      "(${1:_}) => $1"
+    ],
+    "description": "Anonymous identity method"
+  },
+  "Class outline": {
+    "prefix": "class",
+    "body": [
+      "class $1 {",
+      "  $0",
+      "}"
+    ],
+    "description": "Class outline"
+  },
+  "Dart import": {
+    "prefix": "di",
+    "body": [
+      "import 'dart:${1:async}';"
+    ],
+    "description": "Dart import"
+  },
+  "Import": {
+    "prefix": "im",
+    "body": [
+      "import 'package:$1/${2:$1}.dart';"
+    ],
+    "description": "Import"
+  },
+  "For-in loop": {
+    "prefix": "for",
+    "body": [
+      "for(var $1 in ${2:$1s}) {",
+      "  $0",
+      "}"
+    ],
+    "description": "For-in loop"
+  },
+  "indexed for loop": {
+    "prefix": "fori",
+    "body": [
+      "for(int i = 0, ${3:l} = $2.length; i<$3; i++) {",
+      "  var $1 = ${2:$1s}[i];",
+      "  $0",
+      "}"
+    ],
+    "description": "indexed for loop"
+  },
+  "Try/catch block": {
+    "prefix": "try",
+    "body": [
+      "try {",
+      "  ${1:${VISUAL}}",
+      "} catch(${2:e}${3:, st}) {",
+      "  $4",
+      "}"
+    ],
+    "description": "Try/catch block"
+  },
+  "If block": {
+    "prefix": "if",
+    "body": [
+      "if ($1) {",
+      "  ${2:${VISUAL}}",
+      "}"
+    ],
+    "description": "If block"
+  },
+  "Field setter": {
+    "prefix": "set",
+    "body": [
+      "set $1($2 $1) {",
+      "  ${3:_$1 = $1;}",
+      "}"
+    ],
+    "description": "Field setter"
+  },
+  "Simple field getter": {
+    "prefix": "get",
+    "body": [
+      "$1 get $2 => ${3:_$2};"
+    ],
+    "description": "Simple field getter"
+  },
+  "Field getter with more logic": {
+    "prefix": "gett",
+    "body": [
+      "$1 get $2 {",
+      "  $3",
+      "}"
+    ],
+    "description": "Field getter with more logic"
+  },
+  "Async field getter": {
+    "prefix": "aget",
+    "body": [
+      "Future<$1> get $2 async => ${3:_$2};"
+    ],
+    "description": "Async field getter"
+  },
+  "Async field getter with more logic": {
+    "prefix": "agett",
+    "body": [
+      "Future<$1> get $2 async {",
+      "  $3",
+      "}"
+    ],
+    "description": "Async field getter with more logic"
+  },
+  "Stream field with a controller": {
+    "prefix": "gets",
+    "body": [
+      "Stream<${2:void}> get ${1} => ${3:$4.stream;",
+      "final ${4:_$1} = StreamController<$2>();}"
+    ],
+    "description": "Stream field with a controller"
+  },
+  "Anonymous method": {
+    "prefix": "m",
+    "body": [
+      "($1) {",
+      "  $0",
+      "}"
+    ],
+    "description": "Anonymous method"
+  },
+  "Anonymous single statement return": {
+    "prefix": "r",
+    "body": [
+      "($1) => $0"
+    ],
+    "description": "Anonymous single statement return"
+  },
+  "Async anonymous single statement method": {
+    "prefix": "ar",
+    "body": [
+      "($1) async => $0"
+    ],
+    "description": "Async anonymous single statement method"
+  },
+  "Instance or top level method": {
+    "prefix": "fun",
+    "body": [
+      "${1:void} $2($3) {",
+      "  $0",
+      "}"
+    ],
+    "description": "Instance or top level method"
+  },
+  "Async instance or top level method": {
+    "prefix": "am",
+    "body": [
+      "Future<${1:void}> $2($3) async {",
+      "  $0",
+      "}"
+    ],
+    "description": "Async instance or top level method"
+  }
 }
