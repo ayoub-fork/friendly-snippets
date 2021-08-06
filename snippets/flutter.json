@@ -6,9 +6,9 @@
       "  const $1({Key? key}) : super(key: key);\n",
       "  @override",
       "  Widget build(BuildContext context) {",
-      "    return Container(",
-      "      child: ${2:null},",
-      "    );",
+      "    return ${Container(",
+      "      child: ${3:null},",
+      "    )};",
       "  }",
       "}"
     ],
