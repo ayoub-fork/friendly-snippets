@@ -1,5 +1,5 @@
 {
-  "Stateless Widget": {
+  "Stateless Widget ayoub": {
     "prefix": "statelessW",
     "body": [
       "class ${1:name} extends StatelessWidget {",
@@ -12,7 +12,7 @@
       "  }",
       "}"
     ],
-    "description": "Create a Stateless widget"
+    "description": "Ayoub Create a Stateless widget"
   },
   "Stateful Widget": {
     "prefix": "statefulW",
