@@ -17,10 +17,10 @@
   "Stateful Widget": {
     "prefix": "statefulW",
     "body": [
-      "class ${1:name} extends StatefulWidget {",
+      "class ${1:WidgetName} extends StatefulWidget {",
       "  $1({Key? key}) : super(key: key);\n",
       "  @override",
-      "  _${1:WidgetName}State createState() => _${1:WidgetName}State();",
+      "  _$1State createState() => _$1State();",
       "}\n",
       "class _$1State extends State<${1:index}> {",
       "  @override",
