@@ -411,10 +411,10 @@
         "          title: Text('Material App Bar'),",
         "        ),",
         "        body: Column(",
-        "          children: quotes.map((quote) =>",
-        "          Text('${quote?.var1} --- ${quote?.var2}')).toList(),",
+        "          children: <Widget>[",
+        "            Text('--')",
+        "            ],",
         "        ),",
-
         "    );",
         "  }",
         "}"
