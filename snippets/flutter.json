@@ -1123,5 +1123,16 @@
       "}"
     ],
     "description": "Async instance or top level method"
+  },
+  "Widget Card": {
+    "prefix": "cardW",
+    "body": [
+      "Widget ${1:quoteTemplate}(${2:quote}){",
+      "  return Card() {",
+      "    child : Text('${3:card widget}'),      ",
+      "  }",
+      "}"
+    ],
+    "description": "Card widget"
   }
 }
