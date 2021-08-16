@@ -1128,9 +1128,9 @@
     "prefix": "cardW",
     "body": [
       "Widget ${1:quoteTemplate}(${2:quote}){",
-      "  return Card() {",
+      "  return Card(",
       "    child : Text('${3:card widget}'),      ",
-      "  }",
+      "  );",
       "}"
     ],
     "description": "Card widget"
