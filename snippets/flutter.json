@@ -24,12 +24,16 @@
       "  @override",
       "  Widget build(BuildContext context) {",
       "    return Scaffold(",
-      "       child: ${2:null},",
+      "       body: Column(",
+      "          children: <Widget>[,",
+      "            ${2:Text('home screen')},",
+      "          ],",
+      "       ),",
       "    );",
       "  }",
       "}"
     ],
-    "description": "Create a Stateful widget"
+    "description": "Create a Stateful widget with Scaffold(Text)"
   },
   "Build Method": {
     "prefix": "build",
