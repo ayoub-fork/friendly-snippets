@@ -78,7 +78,7 @@
         "path": "./snippets/shell.json"
       },
       {
-        "language": "markdown",
+        "language": ["markdown", "rmd"],
         "path": "./snippets/markdown.json"
       },
       {
@@ -205,6 +205,14 @@
       {
         "language": ["plaintex", "tex"],
         "path": "./snippets/latex/vscode-latex-support.json"
+      },
+      {
+        "language": "twig",
+        "path": "./snippets/twig.json"
+      },
+      {
+        "language": ["r", "rmd"],
+        "path": "./snippets/r.json"
       }
     ]
   }
