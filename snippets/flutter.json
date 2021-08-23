@@ -25,7 +25,7 @@
       "  Widget build(BuildContext context) {",
       "    return Scaffold(",
       "       body: Column(",
-      "          children: <Widget>[,",
+      "          children: <Widget>[",
       "            ${2:Text('home screen')},",
       "          ],",
       "       ),",
