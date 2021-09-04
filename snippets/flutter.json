@@ -383,18 +383,24 @@
   },
   "Material Package": {
     "prefix": "impM",
-    "body": "import 'package:flutter/material.dart';",
-    "description": "Import flutter material package"
+    "body": "import 'package:flutter/material.dart';\n$1",
+    "description": [
+      "import 'package:flutter/material.dart';\n\n"
+    ]
   },
   "Cupertino Package": {
     "prefix": "impC",
-    "body": "import 'package:flutter/cupertino.dart';",
-    "description": "Import Flutter Cupertino package"
+    "body": "import 'package:flutter/cupertino.dart'\n$1;",
+    "description": [
+       "import 'package:flutter/cupertino.dart'"
+    ]
   },
   "flutter_test Package": {
     "prefix": "importFT",
     "body": "import 'package:flutter_test/flutter_test.dart';",
-    "description": "Import flutter_test package"
+    "description": [
+       "import 'package:flutter_test/flutter_test.dart"
+    ]
   },
   "Material App": {
     "prefix": "mateapp",
@@ -671,18 +677,24 @@
   },
   "Services Package": {
     "prefix": "impS",
-    "body": "import 'package:flutter/services.dart';",
-    "description": "Import Flutter Cupertino package"
+    "body": "import 'package:flutter/services.dart';\n$1",
+    "description": [
+       "import 'package:flutter/services.dart'"
+    ]
   },
   "Foundation Package": {
     "prefix": "impF",
-    "body": "import 'package:flutter/foundation.dart';",
-    "description": "Import Flutter Cupertino package"
+    "body": "import 'package:flutter/foundation.dart';\n$1",
+    "description": [
+       "import 'package:flutter/foundation.dart'"
+    ]
   },
   "HTTP Package": {
     "prefix": "impH",
-    "body": "import 'package:http/http.dart'as http;",
-    "description": "Import Flutter HTTP package"
+    "body": "import 'package:http/http.dart' as http;\n$1",
+    "description": [
+       "import 'package:http/http.dart' as http"
+    ]
   },
   "Creates a screen with text in center": {
     "prefix": "screen",
@@ -1029,14 +1041,37 @@
     ],
     "description": "Try/catch block"
   },
-  "If block": {
+  "if condution": {
     "prefix": "if",
     "body": [
       "if ($1) {",
-      "  ${2:${VISUAL}}",
-      "}"
+      "  ${2://TODO:: }",
+      "}\n"
     ],
-    "description": "If block"
+    "description": [
+      "if (...) {",
+      "  ...",
+      "}"
+    ]
+  },
+  "If else": {
+    "prefix": "ifelse",
+    "body": [
+      "if ($1) {",
+      "  ${2://TODO:: }",
+      "}",
+      "else{",
+      "  ${3://TODO:: }",
+      "}\n"
+    ],
+    "description": [
+      "if (...) {",
+      "  ...",
+      "}",
+      "else{",
+      "  ...",
+      "}\n"
+    ]
   },
   "Field setter": {
     "prefix": "set",
