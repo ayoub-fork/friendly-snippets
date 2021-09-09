@@ -10,7 +10,9 @@
       "  }",
       "}"
     ],
-    "description": "Ayoub Create a Stateless widget"
+    "description": [
+      "Ayoub Create a Stateless widget"
+    ]
   },
   "Stateful Widget": {
     "prefix": "statefulW",
@@ -33,7 +35,9 @@
       "  }",
       "}"
     ],
-    "description": "Create a Stateful widget with Scaffold(Text)"
+    "description": [
+      "Create a Stateful widget with Scaffold(Text)"
+    ]
   },
   "Build Method": {
     "prefix": "build",
@@ -43,7 +47,9 @@
       "  return ${0:};",
       "}"
     ],
-    "description": "Describes the part of the user interface represented by this widget."
+    "description": [
+      "Describes the part of the user interface represented by this widget."
+    ]
   },
   "Custom Painter ": {
     "prefix": "customPainter",
@@ -61,7 +67,9 @@
       "  bool shouldRebuildSemantics(${0:name}Painter oldDelegate) => false;",
       "}"
     ],
-    "description": "Used for creating custom paint"
+    "description": [
+      "Used for creating custom paint"
+    ]
   },
   "Custom Clipper ": {
     "prefix": "customClipper",
@@ -76,7 +84,9 @@
       "  bool shouldReclip(CustomClipper<Path> oldClipper) => false;",
       "}"
     ],
-    "description": "Used for creating custom shapes"
+    "description": [
+      "Used for creating custom shapes"
+    ]
   },
   "InitState ": {
     "prefix": "initS",
@@ -87,7 +97,9 @@
       "  ${0:}",
       "}"
     ],
-    "description": "Called when this object is inserted into the tree. The framework will call this method exactly once for each State object it creates."
+    "description": [
+      "Called when this object is inserted into the tree. The framework will call this method exactly once for each State object it creates."
+    ]
   },
   "Dispose": {
     "prefix": "dis",
@@ -98,7 +110,9 @@
       "  super.dispose();",
       "}"
     ],
-    "description": "Called when this object is removed from the tree permanently. The framework calls this method when this State object will never build again."
+    "description": [
+      "Called when this object is removed from the tree permanently. The framework calls this method when this State object will never build again."
+    ]
   },
   "Reassemble": {
     "prefix": "reassemble",
@@ -109,7 +123,9 @@
       "  ${0:}",
       "}"
     ],
-    "description": "Called whenever the application is reassembled during debugging, for example during hot reload."
+    "description": [
+      "Called whenever the application is reassembled during debugging, for example during hot reload."
+    ]
   },
   "didChangeDependencies": {
     "prefix": "didChangeD",
@@ -120,7 +136,9 @@
       "  ${0:}",
       "}"
     ],
-    "description": "Called when a dependency of this State object changes"
+    "description": [
+      "Called when a dependency of this State object changes"
+    ]
   },
   "didUpdateWidget": {
     "prefix": "didUpdateW",
@@ -131,7 +149,9 @@
       "  ${0:}",
       "}"
     ],
-    "description": "Called whenever the widget configuration changes."
+    "description": [
+      "Called whenever the widget configuration changes."
+    ]
   },
   "ListView.Builder": {
     "prefix": "listViewB",
@@ -143,7 +163,9 @@
       " },",
       "),"
     ],
-    "description": "Creates a scrollable, linear array of widgets that are created on demand.Providing a non-null `itemCount` improves the ability of the [ListView] to estimate the maximum scroll extent."
+    "description": [
+      "Creates a scrollable, linear array of widgets that are created on demand.Providing a non-null `itemCount` improves the ability of the [ListView] to estimate the maximum scroll extent."
+    ]
   },
   "ListView.Separated": {
     "prefix": "listViewS",
@@ -158,7 +180,9 @@
       " },",
       "),"
     ],
-    "description": "Creates a fixed-length scrollable linear array of list 'items' separated by list item 'separators'."
+    "description": [
+      "Creates a fixed-length scrollable linear array of list 'items' separated by list item 'separators'."
+    ]
   },
   "GridView.Builder": {
     "prefix": "gridViewB",
@@ -173,7 +197,9 @@
       "  },",
       "),"
     ],
-    "description": "Creates a scrollable, 2D array of widgets that are created on demand. Providing a non-null `itemCount` improves the ability of the [GridView] to estimate the maximum scroll extent."
+    "description": [
+      "Creates a scrollable, 2D array of widgets that are created on demand. Providing a non-null `itemCount` improves the ability of the [GridView] to estimate the maximum scroll extent."
+    ]
   },
   "GridView.Count": {
     "prefix": "gridViewC",
@@ -187,7 +213,9 @@
       "  ],",
       "),"
     ],
-    "description": "Creates a scrollable, 2D array of widgets with a fixed number of tiles in the cross axis."
+    "description": [
+       "Creates a scrollable, 2D array of widgets with a fixed number of tiles in the cross axis."
+    ]
   },
   "GridView.Extent": {
     "prefix": "gridViewE",
@@ -199,7 +227,9 @@
       "  ],",
       "),"
     ],
-    "description": "Creates a scrollable, 2D array of widgets with tiles that each have a maximum cross-axis extent."
+    "description": [
+       "Creates a scrollable, 2D array of widgets with tiles that each have a maximum cross-axis extent."
+    ]
   },
   "Custom Scroll View": {
     "prefix": "customScrollV",
@@ -210,7 +240,9 @@
       "  ],",
       "),"
     ],
-    "description": "Creates a `ScrollView` that creates custom scroll effects using slivers. If the `primary` argument is true, the `controller` must be null."
+    "description": [
+       "Creates a `ScrollView` that creates custom scroll effects using slivers. If the `primary` argument is true, the `controller` must be null."
+    ]
   },
   "Stream Builder": {
     "prefix": "streamBldr",
@@ -225,7 +257,9 @@
       "  },",
       "),"
     ],
-    "description": "Creates a new `StreamBuilder` that builds itself based on the latest snapshot of interaction with the specified `stream`"
+    "description": [
+       "Creates a new `StreamBuilder` that builds itself based on the latest snapshot of interaction with the specified `stream`"
+    ]
   },
   "Animated Builder": {
     "prefix": "animatedBldr",
@@ -238,7 +272,9 @@
       "  },",
       "),"
     ],
-    "description": "Creates an Animated Builder. The widget specified to `child` is passed to the `builder` "
+    "description": [
+       "Creates an Animated Builder. The widget specified to `child` is passed to the `builder` "
+    ]
   },
   "Stateful Builder": {
     "prefix": "statefulBldr",
@@ -249,7 +285,9 @@
       "  },",
       "),"
     ],
-    "description": "Creates a widget that both has state and delegates its build to a callback. Useful for rebuilding specific sections of the widget tree."
+    "description": [
+       "Creates a widget that both has state and delegates its build to a callback. Useful for rebuilding specific sections of the widget tree."
+    ]
   },
   "Orientation Builder": {
     "prefix": "orientationBldr",
@@ -262,7 +300,9 @@
       "  },",
       "),"
     ],
-    "description": "Creates a builder which allows for the orientation of the device to be specified and referenced"
+    "description": [
+       "Creates a builder which allows for the orientation of the device to be specified and referenced"
+    ]
   },
   "Layout Builder": {
     "prefix": "layoutBldr",
@@ -273,7 +313,9 @@
       "  },",
       "),"
     ],
-    "description": "Similar to the Builder widget except that the framework calls the builder function at layout time and provides the parent widget's constraints."
+    "description": [
+       "Similar to the Builder widget except that the framework calls the builder function at layout time and provides the parent widget's constraints."
+    ]
   },
   "Single Child ScrollView": {
     "prefix": "singleChildSV",
@@ -285,7 +327,9 @@
       "  ),",
       "),"
     ],
-    "description": "Creates a scroll view with a single child"
+    "description": [
+       "Creates a scroll view with a single child"
+    ]
   },
   "Future Builder": {
     "prefix": "futureBldr",
@@ -298,7 +342,9 @@
       "  },",
       "),"
     ],
-    "description": "Creates a Future Builder. This builds itself based on the latest snapshot of interaction with a Future."
+    "description": [
+       "Creates a Future Builder. This builds itself based on the latest snapshot of interaction with a Future."
+    ]
   },
   "No Such Method": {
     "prefix": "nosm",
@@ -308,7 +354,9 @@
       "  ${1:}",
       "}"
     ],
-    "description": "This method is invoked when a non-existent method or property is accessed."
+    "description": [
+       "This method is invoked when a non-existent method or property is accessed."
+    ]
   },
   "Inherited Widget": {
     "prefix": "inheritedW",
@@ -328,7 +376,9 @@
       "  }",
       "}"
     ],
-    "description": "Class used to propagate information down the widget tree"
+    "description": [
+       "Class used to propagate information down the widget tree"
+    ]
   },
   "Mounted": {
     "prefix": "mounted",
@@ -338,7 +388,9 @@
       "  ${0:}",
       "}"
     ],
-    "description": "Whether this State object is currently in a tree."
+    "description": [
+       "Whether this State object is currently in a tree."
+    ]
   },
   "Sink": {
     "prefix": "snk",
@@ -346,7 +398,9 @@
       "Sink<${1:type}> get ${2:name} => _${2:name}Controller.sink;",
       "final _${2:name}Controller = StreamController<${1:type}>();"
     ],
-    "description": "A Sink is the input of a stream."
+    "description": [
+       "A Sink is the input of a stream."
+    ]
   },
   "Stream": {
     "prefix": "strm",
@@ -354,7 +408,9 @@
       "Stream<${1:type}> get ${2:name} => _${2:name}Controller.stream;",
       "final _${2:name}Controller = StreamController<${1:type}>();"
     ],
-    "description": "A source of asynchronous data events. A stream can be of any data type <T>"
+    "description": [
+       "A source of asynchronous data events. A stream can be of any data type <T>"
+    ]
   },
   "Subject": {
     "prefix": "subj",
@@ -362,7 +418,9 @@
       "Stream<${1:type}> get ${2:name} => _${2:name}Subject.stream;",
       "final _${2:name}Subject = BehaviorSubject<${1:type}>();"
     ],
-    "description": "A BehaviorSubject is also a broadcast StreamController which returns an Observable rather than a Stream."
+    "description": [
+       "A BehaviorSubject is also a broadcast StreamController which returns an Observable rather than a Stream."
+    ]
   },
   "toString": {
     "prefix": "toStr",
@@ -372,14 +430,18 @@
       "return ${1:toString};",
       " }"
     ],
-    "description": "Returns a string representation of this object."
+    "description": [
+       "Returns a string representation of this object."
+    ]
   },
   "debugPrint": {
     "prefix": "debugP",
     "body": [
       "debugPrint(${1:statement});"
     ],
-    "description": "Prints a message to the console, which you can access using the flutter tool's `logs` command (flutter logs)."
+    "description": [
+       "Prints a message to the console, which you can access using the flutter tool's `logs` command (flutter logs)."
+    ]
   },
   "Material Package": {
     "prefix": "impM",
@@ -429,7 +491,9 @@
         "  }",
         "}"
     ],
-    "description": "Create a MaterialApp"
+    "description": [
+       "Create a MaterialApp"
+    ]
   },
   "Cupertino App": {
     "prefix": "cupeapp",
@@ -457,7 +521,9 @@
       "  }",
       "}"
     ],
-    "description": "Create a CupertinoApp"
+    "description": [
+       "Create a CupertinoApp"
+    ]
   },
   "Tween Animation Builder": {
     "prefix": "tweenAnimationBuilder",
@@ -470,7 +536,9 @@
       "     },",
       " ),  "
     ],
-    "description": "Widget builder that animates a property of a Widget to a target value whenever the target value changes."
+    "description": [
+       "Widget builder that animates a property of a Widget to a target value whenever the target value changes."
+    ]
   },
   "Value Listenable Builder": {
     "prefix": "valueListenableBuilder",
@@ -482,7 +550,9 @@
       "    },",
       " ),"
     ],
-    "description": "Given a ValueListenable<T> and a builder which builds widgets from concrete values of T, this class will automatically register itself as a listener of the ValueListenable and call the builder with updated values when the value changes."
+    "description": [
+       "Given a ValueListenable<T> and a builder which builds widgets from concrete values of T, this class will automatically register itself as a listener of the ValueListenable and call the builder with updated values when the value changes."
+    ]
   },
   "Test": {
     "prefix": "f-test",
@@ -492,7 +562,9 @@
       "   () {},",
       ");"
     ],
-    "description": "Create a test function"
+    "description": [
+       "Create a test function"
+    ]
   },
   "Test Widgets": {
     "prefix": "widgetTest",
@@ -502,7 +574,9 @@
       "   (WidgetTester tester) async {},",
       ");"
     ],
-    "description": "Create a testWidgets function"
+    "description": [
+       "Create a testWidgets function"
+    ]
   },
   "Scaffold widget snippet": {
     "prefix": "fscaf",
@@ -514,7 +588,9 @@
       "  body: ${2:Container()}${0},",
       ");"
     ],
-    "description": "Scaffold widget snippet"
+    "description": [
+       "Scaffold widget snippet"
+    ]
   },
   "Expand widget snippet": {
     "prefix": "fex",
@@ -523,21 +599,27 @@
       "  child: ${1:Widget},${0}",
       ")"
     ],
-    "description": "Expand widget snippet"
+    "description": [
+       "Expand widget snippet"
+    ]
   },
   "Text widget snippet": {
     "prefix": "ftxt",
     "body": [
       "Text('${1:text}'),${0}"
     ],
-    "description": "Text widget snippet"
+    "description": [
+       "Text widget snippet"
+    ]
   },
   "Flutter Icon widget snippet": {
     "prefix": "fic",
     "body": [
       "Icon(Icons.${1:clear})${0}"
     ],
-    "description": "Flutter Icon widget snippet"
+    "description": [
+       "Flutter Icon widget snippet"
+    ]
   },
   "Flutter Container widget snippet": {
     "prefix": "fcont",
@@ -546,7 +628,9 @@
       "  child: ${1}",
       ")"
     ],
-    "description": "Flutter Container widget snippet"
+    "description": [
+       "Flutter Container widget snippet"
+    ]
   },
   "Flutter Center widget snippet": {
     "prefix": "fcent",
@@ -555,7 +639,9 @@
       "  child: ${1:Widget}(${0}),",
       ")"
     ],
-    "description": "Flutter Center widget snippet"
+    "description": [
+       "Flutter Center widget snippet"
+    ]
   },
   "Flutter Row widget snippet": {
     "prefix": "frow",
@@ -564,7 +650,9 @@
       "  children: <Widget>[${0}],",
       ")"
     ],
-    "description": "Flutter Row widget snippet"
+    "description": [
+       "Flutter Row widget snippet"
+    ]
   },
   "Flutter Column widget snippet": {
     "prefix": "fcol",
@@ -573,7 +661,9 @@
       "  children: <Widget>[${0}],",
       ")"
     ],
-    "description": "Flutter Column widget snippet"
+    "description": [
+       "Flutter Column widget snippet"
+    ]
   },
   "Flutter Stack widget snippet": {
     "prefix": "fstk",
@@ -582,7 +672,9 @@
       "  children: <Widget>[${0}],",
       ")"
     ],
-    "description": "Flutter Stack widget snippet"
+    "description": [
+       "Flutter Stack widget snippet"
+    ]
   },
   "Align widget": {
     "prefix": "falign",
@@ -592,7 +684,9 @@
       "  child:${2:Widget}",
       "  ),"
     ],
-    "description": "Align widget"
+    "description": [
+       "Align widget"
+    ]
   },
   "Textbutton widget": {
     "prefix": "ftextbtn",
@@ -604,7 +698,9 @@
       "  ),",
       "),"
     ],
-    "description": "Textbutton widget"
+    "description": [
+       "Textbutton widget"
+    ]
   },
   "FloatingActionButton widget": {
     "prefix": "fab",
@@ -614,7 +710,9 @@
       "  child: Icon(Icons.${2:add}),",
       "),"
     ],
-    "description": "FloatingActionButton widget"
+    "description": [
+       "FloatingActionButton widget"
+    ]
   },
   "IconButton widget": {
     "prefix": "ficbtn",
@@ -624,7 +722,9 @@
       "  icon: Icon(Icons.${2:add}),",
       "),"
     ],
-    "description": "IconButton widget"
+    "description": [
+       "IconButton widget"
+    ]
   },
   "ElevatedButton widget": {
     "prefix": "felevbtn",
@@ -636,7 +736,9 @@
       "  ),",
       ")"
     ],
-    "description": "ElevatedButton widget"
+    "description": [
+       "ElevatedButton widget"
+    ]
   },
   "GestureDetector widget": {
     "prefix": "fgesdet",
@@ -646,7 +748,9 @@
       "  child: ${2:Widget},",
       "),"
     ],
-    "description": "GestureDetector widget"
+    "description": [
+       "GestureDetector widget"
+    ]
   },
   "InkWell widget": {
     "prefix": "fink",
@@ -656,7 +760,9 @@
       "  child:${2:Widget}",
       "),"
     ],
-    "description": "RaisedButton widget"
+    "description": [
+       "RaisedButton widget"
+    ]
   },
   "Drawer widget": {
     "prefix": "fdrawer",
@@ -666,14 +772,18 @@
       "    children: const <Widget>[${0}],",
       "),  "
     ],
-    "description": "Drawer widget"
+    "description": [
+       "Drawer widget"
+    ]
   },
   "MediaQuery widget": {
     "prefix": "fmeque",
     "body": [
       "MediaQuery.of(context).${0};"
     ],
-    "description": "MediaQuery widget"
+    "description": [
+       "MediaQuery widget"
+    ]
   },
   "Services Package": {
     "prefix": "impS",
@@ -718,7 +828,9 @@
       "}",
       ""
     ],
-    "description": "Creates a screen with text in center"
+    "description": [
+       "Creates a screen with text in center"
+    ]
   },
   "Device Preview": {
     "prefix": "devprev",
@@ -749,56 +861,72 @@
       "  }",
       "}"
     ],
-    "description": "Device Preview"
+    "description": [
+       "Device Preview"
+    ]
   },
   "Theme of context": {
     "prefix": "ftheme",
     "body": [
       "Theme.of(context).${0}"
     ],
-    "description": "Theme of context"
+    "description": [
+       "Theme of context"
+    ]
   },
   "CrossAxisAlignment": {
     "prefix": "caa",
     "body": [
       "crossAxisAlignment : CrossAxisAlignment.${0},"
     ],
-    "description": "CrossAxisAlignment"
+    "description": [
+       "CrossAxisAlignment"
+    ]
   },
   "MainAxisAlignment": {
     "prefix": "maa",
     "body": [
       "mainAxisAlignment : MainAxisAlignment.${1},"
     ],
-    "description": "MainAxisAlignment"
+    "description": [
+       "MainAxisAlignment"
+    ]
   },
   "Flutter Logo": {
     "prefix": "flogo",
     "body": [
       "FlutterLogo(),"
     ],
-    "description": "Flutter Logo"
+    "description": [
+       "Flutter Logo"
+    ]
   },
   "SizedBox Widget": {
     "prefix": "fszb",
     "body": [
       "SizedBox(),"
     ],
-    "description": "Sized Box Widget"
+    "description": [
+       "Sized Box Widget"
+    ]
   },
   "SizedBox Widget with width": {
     "prefix": "fszbw",
     "body": [
       "SizedBox(width:${0}),"
     ],
-    "description": "SizedBox Widget with width"
+    "description": [
+       "SizedBox Widget with width"
+    ]
   },
   "SizedBox Widget with height": {
     "prefix": "fszbh",
     "body": [
       "SizedBox(height:${0}),"
     ],
-    "description": "SizedBox Widget with height"
+    "description": [
+       "SizedBox Widget with height"
+    ]
   },
   "ListView Widget": {
     "prefix": "flistv",
@@ -807,7 +935,9 @@
       "children: <Widget>[${0}],",
       ")"
     ],
-    "description": "ListView Widget"
+    "description": [
+       "ListView Widget"
+    ]
   },
   "Navigation widget": {
     "prefix": "fnav",
@@ -817,7 +947,9 @@
       " MaterialPageRoute(builder: (context) => ${1}),",
       " );"
     ],
-    "description": "Flutter Navigation widget"
+    "description": [
+       "Flutter Navigation widget"
+    ]
   },
   "Custom AppBar widget": {
     "prefix": "appbar",
@@ -844,7 +976,9 @@
       "  }",
       "}"
     ],
-    "description": "Custom AppBar widget"
+    "description": [
+       "Custom AppBar widget"
+    ]
   },
   "Default Counter App ": {
     "prefix": "defaultApp",
@@ -963,14 +1097,18 @@
       "  }",
       "}"
     ],
-    "description": "Default Counter App "
+    "description": [
+       "Default Counter App "
+    ]
   },
   "Flutter TextStyle property": {
     "prefix": "fstyle",
     "body": [
       "style: TextStyle($0),"
     ],
-    "description": "Flutter TextStyle property"
+    "description": [
+       "Flutter TextStyle property"
+    ]
   },
   "Dart main method": {
     "prefix": "main",
@@ -979,14 +1117,18 @@
       "  $0",
       "}"
     ],
-    "description": "Dart main method"
+    "description": [
+       "Dart main method"
+    ]
   },
   "Anonymous identity method": {
     "prefix": "ident",
     "body": [
       "(${1:_}) => $1"
     ],
-    "description": "Anonymous identity method"
+    "description": [
+       "Anonymous identity method"
+    ]
   },
   "Class outline": {
     "prefix": "class",
@@ -995,21 +1137,27 @@
       "  $0",
       "}"
     ],
-    "description": "Class outline"
+    "description": [
+       "Class outline"
+    ]
   },
   "Dart import": {
     "prefix": "di",
     "body": [
       "import 'dart:${1:async}';"
     ],
-    "description": "Dart import"
+    "description": [
+       "Dart import"
+    ]
   },
   "Import": {
     "prefix": "im",
     "body": [
       "import 'package:$1/${2:$1}.dart';"
     ],
-    "description": "Import"
+    "description": [
+       "Import"
+    ]
   },
   "For-in loop": {
     "prefix": "for",
@@ -1018,7 +1166,9 @@
       "  $0",
       "}"
     ],
-    "description": "For-in loop"
+    "description": [
+       "For-in loop"
+    ]
   },
   "indexed for loop": {
     "prefix": "fori",
@@ -1028,7 +1178,9 @@
       "  $0",
       "}"
     ],
-    "description": "indexed for loop"
+    "description": [
+       "indexed for loop"
+    ]
   },
   "Try/catch block": {
     "prefix": "try",
@@ -1039,7 +1191,9 @@
       "  $4",
       "}"
     ],
-    "description": "Try/catch block"
+    "description": [
+       "Try/catch block"
+    ]
   },
   "if condution": {
     "prefix": "if",
@@ -1080,14 +1234,18 @@
       "  ${3:_$1 = $1;}",
       "}"
     ],
-    "description": "Field setter"
+    "description": [
+       "Field setter"
+    ]
   },
   "Simple field getter": {
     "prefix": "get",
     "body": [
       "$1 get $2 => ${3:_$2};"
     ],
-    "description": "Simple field getter"
+    "description": [
+       "Simple field getter"
+    ]
   },
   "Field getter with more logic": {
     "prefix": "gett",
@@ -1096,14 +1254,18 @@
       "  $3",
       "}"
     ],
-    "description": "Field getter with more logic"
+    "description": [
+       "Field getter with more logic"
+    ]
   },
   "Async field getter": {
     "prefix": "aget",
     "body": [
       "Future<$1> get $2 async => ${3:_$2};"
     ],
-    "description": "Async field getter"
+    "description": [
+       "Async field getter"
+    ]
   },
   "Async field getter with more logic": {
     "prefix": "agett",
@@ -1112,7 +1274,9 @@
       "  $3",
       "}"
     ],
-    "description": "Async field getter with more logic"
+    "description": [
+       "Async field getter with more logic"
+    ]
   },
   "Stream field with a controller": {
     "prefix": "gets",
@@ -1120,7 +1284,9 @@
       "Stream<${2:void}> get ${1} => ${3:$4.stream;",
       "final ${4:_$1} = StreamController<$2>();}"
     ],
-    "description": "Stream field with a controller"
+    "description": [
+       "Stream field with a controller"
+    ]
   },
   "Anonymous method": {
     "prefix": "m",
@@ -1129,21 +1295,27 @@
       "  $0",
       "}"
     ],
-    "description": "Anonymous method"
+    "description": [
+       "Anonymous method"
+    ]
   },
   "Anonymous single statement return": {
     "prefix": "r",
     "body": [
       "($1) => $0"
     ],
-    "description": "Anonymous single statement return"
+    "description": [
+       "Anonymous single statement return"
+    ]
   },
   "Async anonymous single statement method": {
     "prefix": "ar",
     "body": [
       "($1) async => $0"
     ],
-    "description": "Async anonymous single statement method"
+    "description": [
+       "Async anonymous single statement method"
+    ]
   },
   "Instance or top level method": {
     "prefix": "fun",
@@ -1152,7 +1324,9 @@
       "  $0",
       "}"
     ],
-    "description": "Instance or top level method"
+    "description": [
+       "Instance or top level method"
+    ]
   },
   "Async instance or top level method": {
     "prefix": "am",
@@ -1161,7 +1335,9 @@
       "  $0",
       "}"
     ],
-    "description": "Async instance or top level method"
+    "description": [
+       "Async instance or top level method"
+    ]
   },
   "Widget Card": {
     "prefix": "cardW",
@@ -1172,6 +1348,8 @@
       "  );",
       "}"
     ],
-    "description": "Card widget"
+    "description": [
+       "Card widget"
+    ]
   }
 }
