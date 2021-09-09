@@ -1320,7 +1320,7 @@
   "Instance or top level method": {
     "prefix": "fun",
     "body": [
-      "${1:void} $2($3) {",
+      "${1:void} ${2:name}($3) {",
       "  $0",
       "}"
     ],
