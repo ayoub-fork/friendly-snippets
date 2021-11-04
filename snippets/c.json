@@ -8,6 +8,15 @@
     ],
     "description": "Code snippet for 'for' loop"
   },
+  "for pointeur": {
+    "prefix": "forp",
+    "body": [
+      "for ( ${1:P} = ${2:T}; $1 < $2+${3:n}; $1++) {",
+      "\tprintf(\"${4:\n}\");",
+      "}$5"
+    ],
+    "description": "loop in table with pointeur"
+  },
   "forr": {
     "prefix": "forr",
     "body": [
@@ -224,7 +233,7 @@
   },
   "scanf": {
     "prefix": "scanf",
-    "body": ["scanf(\"$1\\n\"$0);"],
+    "body": ["scanf(\"${1:%d}\",&${2:i});"],
     "description": "Generic scanf() snippet"
   },
   "sscanf": {

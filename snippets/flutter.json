@@ -1271,6 +1271,27 @@
        "Async instance or top level method"
     ]
   },
+  "Assetes image with": {
+    "prefix": "img",
+    "body": [
+      "Image(image: AssetImage('${1:assets/img.png}'),",
+      "   width: 28,",
+      "   height: 50,",
+      "),"
+    ],
+    "description": [
+       "AssetImage + width and height"
+    ]
+  },
+  "Assetes image only": {
+    "prefix": "imgonly",
+    "body": [
+      "Image(image: AssetImage('${1:assets/img.png}')),"
+    ],
+    "description": [
+       "AssetImage only"
+    ]
+  },
   "Widget Card": {
     "prefix": "cardW",
     "body": [
