@@ -2,7 +2,7 @@
   "for": {
     "prefix": "for",
     "body": [
-      "for (${1:size_t} ${2:i} = ${3:0}; $2 < ${4:length}; $2++) {",
+      "for (int ${1:i} = ${2:0}; $1 < ${3:n}; $1++) {",
       "\t$0",
       "}"
     ],
@@ -97,7 +97,7 @@
     "description": "Code snippet for #include \" \""
   },
   "#inc<": {
-    "prefix": "#inc<",
+    "prefix": ["#inc<"],
     "body": ["#include <$1>$0"],
     "description": "Code snippet for #include < >"
   },
@@ -107,9 +107,9 @@
     "description": "Code snippet for #define \" \""
   },
   "Main function template": {
-    "prefix": "main",
+    "prefix": ["main","intm"],
     "body": [
-      "int main (int argc, char *argv[])",
+      "int main ()",
       "{",
       "\t$1",
       "\treturn 0;",
