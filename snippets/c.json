@@ -12,7 +12,7 @@
     "prefix": "forp",
     "body": [
       "for ( ${1:P} = ${2:T}; $1 < $2+${3:n}; $1++) {",
-      "\tprintf(\"${4:\n}\");",
+      "\tprintf(\"${4:\\n}\");",
       "}$5"
     ],
     "description": "loop in table with pointeur"
@@ -218,7 +218,7 @@
   },
   "printf": {
     "prefix": "printf",
-    "body": ["printf(\"$1\\n\"$0);"],
+    "body": ["printf(\"${1:\\n}\"$0);"],
     "description": "Generic printf() snippet"
   },
   "sprintf": {
