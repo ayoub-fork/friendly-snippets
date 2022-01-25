@@ -219,7 +219,7 @@
   "printf": {
     "prefix": "printf",
     "body": ["printf(\"${1:\\n}\"$0);"],
-    "description": "Generic printf() snippet"
+    "description": "Generic printf()"
   },
   "sprintf": {
     "prefix": "sprintf",
